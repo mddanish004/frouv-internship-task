@@ -33,7 +33,7 @@ function Navbar() {
       <div className="mx-auto flex h-[64px] w-full max-w-[1360px] items-center justify-between rounded-full border border-[#ececec] bg-white/95 px-5 shadow-[0_10px_28px_rgba(0,0,0,0.06)] backdrop-blur md:h-[72px] md:px-7 lg:px-10">
         <Image src="/brand/navawork-logo.png" alt="Navawork" width={154} height={31} className="h-[26px] w-[130px] md:h-[28px] md:w-[140px]" />
         <div className="ml-auto hidden items-center gap-5 lg:flex">
-          <nav className="flex items-center gap-4 text-[15px] font-medium text-[#111111]">
+          <nav className="flex items-center gap-4 text-[15px] font-normal text-[#111111]">
             <a href="#" className="relative overflow-hidden rounded-full px-5 py-2 leading-none transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
               <span className="relative z-10">Services</span>
             </a>
@@ -50,7 +50,7 @@ function Navbar() {
           <button
             type="button"
             onClick={openScheduleCall}
-            className="relative h-[44px] overflow-hidden rounded-full bg-[#111111] px-8 text-[15px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100"
+            className="relative h-[44px] overflow-hidden rounded-full bg-[#111111] px-8 text-[15px] font-normal text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100"
           >
             <span className="relative z-10">Schedule a Call</span>
           </button>
@@ -69,22 +69,22 @@ function Navbar() {
       {menuOpen && (
         <div className="absolute left-0 top-full z-50 mt-2 w-full px-4 sm:px-6 lg:hidden">
           <nav className="mx-auto flex max-w-[1360px] flex-col rounded-2xl border border-[#ececec] bg-white p-4 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
-            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-medium text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
+            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-normal text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
               <span className="relative z-10">Services</span>
             </a>
-            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-medium text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
+            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-normal text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
               <span className="relative z-10">Our Works</span>
             </a>
-            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-medium text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
+            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-normal text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
               <span className="relative z-10">Our Process</span>
             </a>
-            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-medium text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
+            <a href="#" onClick={() => setMenuOpen(false)} className="relative w-fit overflow-hidden rounded-full px-5 py-2 text-[18px] font-normal text-[#111111] transition-all duration-300 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100">
               <span className="relative z-10">About Us</span>
             </a>
             <button
               type="button"
               onClick={() => { setMenuOpen(false); openScheduleCall(); }}
-              className="relative mt-3 h-[48px] w-full overflow-hidden rounded-full bg-[#111111] text-[16px] font-medium text-white transition-all duration-300 hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100"
+              className="relative mt-3 h-[48px] w-full overflow-hidden rounded-full bg-[#111111] text-[16px] font-normal text-white transition-all duration-300 hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100"
             >
               <span className="relative z-10">Schedule a Call</span>
             </button>

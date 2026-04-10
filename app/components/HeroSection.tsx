@@ -20,10 +20,10 @@ function HeroButton({
   return (
     <button
       type="button"
-      className={`h-[44px] rounded-full px-6 text-[15px] font-medium sm:h-[48px] sm:px-7 sm:text-[16px] lg:h-[48px] lg:px-8 lg:text-[16px] ${dark ? "bg-[#111111] text-white" : "border border-[#e5e5e5] bg-white text-[#111111]"
+      className={`relative h-[44px] overflow-hidden rounded-full px-6 text-[15px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100 sm:h-[48px] sm:px-7 sm:text-[16px] lg:h-[48px] lg:px-8 lg:text-[16px] ${dark ? "bg-[#111111] text-white" : "border border-[#e5e5e5] bg-white text-[#111111]"
         }`}
     >
-      {children}
+      <span className="relative z-10">{children}</span>
     </button>
   );
 }
