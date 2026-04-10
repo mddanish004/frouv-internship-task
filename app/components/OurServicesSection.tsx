@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function ToolIcon({ src, alt }: { src: string; alt: string }) {
   return (
-    <Image src={src} alt={alt} width={36} height={36} className="h-9 w-9 shrink-0 rounded-[10px] object-cover" />
+    <Image src={src} alt={alt} width={36} height={36} className="h-9 w-9 shrink-0 rounded-lg object-cover" />
   );
 }
 
@@ -151,20 +151,20 @@ function ServiceShowcaseCard({
   tools: ReactNode;
 }) {
   return (
-    <article className="flex flex-col">
-      <div className="overflow-hidden rounded-[26px] bg-white shadow-[0_10px_44px_rgba(0,0,0,0.07)]">
-        <div className="bg-[#ececee] px-4 pb-0 pt-4">
-          <div className="relative h-[210px] overflow-hidden rounded-[18px] shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
+    <article className="flex flex-col lg:h-[403.7174px] lg:w-[320.7173px]">
+      <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_8px_36px_rgba(0,0,0,0.06)] lg:h-full lg:w-full">
+        <div className="bg-[#ececee] px-3 pb-0 pt-3 lg:px-3.5 lg:pt-3.5">
+          <div className="relative h-[180px] overflow-hidden rounded-[14px] shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] lg:h-[196px]">
             {graphic}
           </div>
         </div>
-        <div className="relative z-10 -mt-[52px] px-4 pb-6 pt-0">
-          <div className="rounded-[22px] bg-white px-5 pb-6 pt-4 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
-            <div className="mb-5 inline-flex flex-wrap gap-2 rounded-[14px] border border-[#ececec] bg-[#f5f5f6] p-[10px]">
+        <div className="relative z-10 -mt-[44px] px-3 pb-5 pt-0 lg:px-3.5 lg:pb-3.5">
+          <div className="rounded-[18px] bg-white px-4 pb-5 pt-3 shadow-[0_6px_24px_rgba(0,0,0,0.05)] lg:h-[200px] lg:px-4 lg:pb-4 lg:pt-3">
+            <div className="mb-4 inline-flex flex-wrap gap-1.5 rounded-[12px] border border-[#ececec] bg-[#f5f5f6] p-2 lg:mb-3">
               {tools}
             </div>
-            <h3 className="text-[19px] font-bold leading-snug text-black">{title}</h3>
-            <p className="mt-3 text-[15px] font-normal leading-relaxed text-[#666666]">{description}</p>
+            <h3 className="text-[16px] font-medium leading-snug text-black lg:text-[24px]">{title}</h3>
+            <p className="mt-2 text-[14px] font-normal leading-relaxed text-[#666666] lg:text-[17px] lg:leading-normal">{description}</p>
           </div>
         </div>
       </div>
@@ -247,15 +247,15 @@ const CARDS = [
 
 export default function OurServicesSection() {
   return (
-    <section className="w-full bg-[#F9F9F9] px-4 py-12 sm:px-6 md:py-16 lg:py-[88px]">
+    <section className="w-full bg-[#F9F9F9] px-4 py-8 sm:px-6 md:py-9 lg:py-10">
       <div className="mx-auto w-full max-w-[1240px]">
-        <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-5 py-2 text-[14px] font-medium text-[#A855F7]">
+        <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-5 py-2 text-[14px] font-medium text-[#A855F7] lg:text-[17px]">
           Our Services
         </div>
-        <h2 className="mt-5 text-center text-[26px] font-bold leading-tight tracking-[-0.3px] text-black md:text-[34px] md:tracking-[-0.4px] lg:text-[42px] lg:tracking-[-0.5px]">
+        <h2 className="mt-5 text-center text-[24px] font-semibold leading-tight tracking-[-0.3px] text-black md:text-[32px] md:tracking-[-0.4px] lg:text-[48px] lg:tracking-[-0.5px]">
           What we bring to your table
         </h2>
-        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 md:mt-10 md:grid-cols-2 md:gap-y-12 lg:mt-14 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-6 md:mt-10 md:grid-cols-2 md:gap-y-8 lg:mt-12 lg:grid-cols-3">
           {CARDS.map((card) => (
             <ServiceShowcaseCard
               key={card.title}

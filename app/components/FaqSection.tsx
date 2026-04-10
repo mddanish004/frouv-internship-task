@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { useScheduleCall } from "./ScheduleCallModal";
 
 function ChevronDown({ className = "" }: { className?: string }) {
   return (
@@ -13,37 +14,43 @@ function ChevronDown({ className = "" }: { className?: string }) {
 
 function Badge({ children }: { children: string }) {
   return (
-    <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-6 py-[10px] text-[14px] font-medium text-[#A855F7]">
+    <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-5 py-2 text-[14px] font-medium text-[#A855F7] lg:text-[17px]">
       {children}
     </div>
   );
 }
 
 function SupportCard() {
+  const openScheduleCall = useScheduleCall();
   return (
-    <div className="rounded-2xl border border-[#efefef] bg-white px-6 py-8 shadow-[0_6px_26px_rgba(0,0,0,0.04)]">
+    <div className="w-fit self-start rounded-xl border border-[#efefef] bg-white px-5 py-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] lg:px-6 lg:py-7">
       <div className="flex justify-center">
-        <Image src="/faq-icons/support.png" alt="Support" width={52} height={52} className="h-[52px] w-[52px]" />
+        <Image src="/faq-icons/support.png" alt="Support" width={44} height={44} className="h-11 w-11" />
       </div>
-      <p className="mt-6 text-center text-[14px] font-semibold leading-[1.6] text-[#6b7280]">
+      <p className="mt-4 text-center text-[13px] font-normal leading-[1.6] text-[#6b7280] lg:text-[16px]">
         FAQs help you a little bit but for the
         <br />
         rest we are there for you
       </p>
-      <div className="mt-6 flex flex-col items-center gap-3">
+      <div className="mt-5 flex flex-col items-center gap-2.5">
         <button
           type="button"
-          className="flex h-[40px] w-[176px] items-center justify-center gap-2 rounded-full bg-[#111111] text-[13px] font-semibold text-white shadow-[0_8px_18px_rgba(0,0,0,0.14)]"
+          onClick={openScheduleCall}
+          className="relative flex h-9 w-fit items-center justify-center gap-2 overflow-hidden rounded-full bg-[#111111] px-5 text-[12px] font-medium text-white shadow-[0_6px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100 lg:h-10 lg:px-6 lg:text-[14px]"
         >
-          <Image src="/faq-icons/google-meet.png" alt="Google Meet" width={16} height={16} className="h-4 w-4" />
-          Schedule a Call
+          <span className="relative z-10 flex items-center gap-2">
+            <Image src="/faq-icons/google-meet.png" alt="Google Meet" width={14} height={14} className="h-3.5 w-3.5" />
+            Schedule a Call
+          </span>
         </button>
         <button
           type="button"
-          className="flex h-[40px] w-[176px] items-center justify-center gap-2 rounded-full border border-[#e9e9e9] bg-white text-[13px] font-semibold text-[#111111]"
+          className="relative flex h-9 w-fit items-center justify-center gap-2 overflow-hidden rounded-full border border-[#e9e9e9] bg-white px-5 text-[12px] font-medium text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_10px_22px_rgba(148,0,217,0.35)] before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-[#c11bff] before:to-[#9400d9] before:scale-x-0 before:origin-center before:transition-transform before:duration-300 hover:before:scale-x-100 lg:h-10 lg:px-6 lg:text-[14px]"
         >
-          <Image src="/faq-icons/whatsapp.png" alt="WhatsApp" width={20} height={20} className="h-5 w-5" />
-          Chat with us
+          <span className="relative z-10 flex items-center gap-2">
+            <Image src="/faq-icons/whatsapp.png" alt="WhatsApp" width={20} height={20} className="h-5 w-5" />
+            Chat with us
+          </span>
         </button>
       </div>
     </div>
@@ -55,25 +62,23 @@ function FaqRow({
   answer,
   isOpen,
   onToggle,
-  showBorderTop,
 }: {
   question: string;
   answer: string;
   isOpen: boolean;
   onToggle: () => void;
-  showBorderTop: boolean;
 }) {
   return (
-    <div className={`bg-white ${showBorderTop ? "border-t border-[#efefef]" : ""}`}>
+    <div className="overflow-hidden rounded-xl border border-[#efefef] bg-white shadow-[0_4px_16px_rgba(0,0,0,0.03)]">
       <button
         type="button"
         onClick={onToggle}
         className="flex w-full items-center justify-between px-6 py-[18px] text-left"
       >
-        <span className="text-[14px] font-semibold text-[#111827]">{question}</span>
+        <span className="text-[13px] font-medium text-[#111827] lg:text-[18px]">{question}</span>
         <ChevronDown className={`shrink-0 ${isOpen ? "rotate-180" : ""} transition-transform duration-200`} />
       </button>
-      <div className={`${isOpen ? "block" : "hidden"} px-6 pb-5 text-[14px] leading-relaxed text-[#6b7280]`}>
+      <div className={`${isOpen ? "block" : "hidden"} px-6 pb-4 text-[13px] leading-relaxed text-[#6b7280] lg:text-[17px] lg:leading-normal`}>
         {answer}
       </div>
     </div>
@@ -145,17 +150,17 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-white px-4 pb-10 pt-12 sm:px-6 md:pb-12 md:pt-16 lg:pb-[64px] lg:pt-[88px]">
+    <section className="w-full bg-white px-4 pb-3 pt-8 sm:px-6 md:pb-3 md:pt-9 lg:pb-11 lg:pt-10">
       <div className="mx-auto w-full max-w-[1180px]">
         <Badge>FAQs</Badge>
-        <h2 className="mt-7 text-center text-[24px] font-bold leading-tight tracking-[-0.2px] text-[#111827] md:text-[28px] md:tracking-[-0.3px] lg:text-[34px]">
+        <h2 className="mt-5 text-center text-[22px] font-semibold leading-tight tracking-[-0.2px] text-[#111827] md:text-[30px] md:tracking-[-0.3px] lg:text-[48px]">
           All your Questions, Answered
         </h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-6 md:mt-10 md:grid-cols-[280px_1fr] md:gap-8 lg:mt-14 lg:gap-10">
+        <div className="mt-8 grid grid-cols-1 gap-5 md:mt-10 md:grid-cols-[320px_1fr] md:gap-6 lg:mt-12 lg:grid-cols-[fit-content(320px)_760px] lg:justify-center lg:gap-8">
           <SupportCard />
 
-          <div className="overflow-hidden rounded-2xl border border-[#efefef] bg-white shadow-[0_6px_26px_rgba(0,0,0,0.03)]">
+          <div className="flex flex-col gap-5 lg:w-[760px] lg:gap-8">
             {items.map((item, i) => (
               <FaqRow
                 key={item.question}
@@ -163,7 +168,6 @@ export default function FaqSection() {
                 answer={item.answer}
                 isOpen={openIndex === i}
                 onToggle={() => setOpenIndex((v) => (v === i ? null : i))}
-                showBorderTop={i !== 0}
               />
             ))}
           </div>

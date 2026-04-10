@@ -32,13 +32,13 @@ function StrategyFeature({
   theme: ThemeKey;
 }) {
   return (
-    <div className="flex gap-5">
-      <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center">
+    <div className="flex gap-4 lg:gap-6">
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center lg:h-16 lg:w-16">
         {icon}
       </div>
       <div className="min-w-0 pt-0.5">
-        <div className="text-[17px] font-bold leading-snug text-[#111827]">{title}</div>
-        <p className="mt-1.5 text-[15px] font-normal leading-relaxed text-[#6b7280]">{description}</p>
+        <div className="text-[15px] font-medium leading-snug text-[#111827] lg:text-[24px]">{title}</div>
+        <p className="mt-1 text-[14px] font-normal leading-relaxed text-[#6b7280] lg:text-[18px] lg:leading-normal">{description}</p>
       </div>
     </div>
   );
@@ -57,14 +57,14 @@ function StrategyBlock({
 }) {
   const t = themeStyles[theme];
   return (
-    <div className="mt-[56px] first:mt-0">
+    <div className="mt-10 first:mt-0 lg:mt-12">
       <div
-        className={`rounded-2xl bg-linear-to-r ${t.bar} px-6 py-[18px] shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]`}
+        className={`rounded-xl bg-linear-to-r ${t.bar} px-5 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] lg:px-6 lg:py-4`}
       >
-        <h3 className={`text-[20px] font-bold leading-tight ${t.barText}`}>{barTitle}</h3>
+        <h3 className={`text-[17px] font-medium leading-tight ${t.barText} lg:text-[28px]`}>{barTitle}</h3>
       </div>
-      <p className="mt-5 max-w-[920px] text-[16px] font-normal leading-[1.7] text-[#6b7280]">{intro}</p>
-      <div className="mt-8 flex flex-col gap-9">
+      <p className="mt-4 max-w-[1080px] text-[14px] font-normal leading-[1.7] text-[#6b7280] lg:text-[20px] lg:leading-normal">{intro}</p>
+      <div className="mt-6 flex flex-col gap-6 lg:mt-7 lg:gap-7">
         {features.map((f) => (
           <StrategyFeature key={f.title} theme={theme} icon={f.icon} title={f.title} description={f.description} />
         ))}
@@ -79,19 +79,19 @@ export default function MarketingGtmSection() {
       <div className="pointer-events-none absolute -right-32 -top-28 h-[min(520px,55vw)] w-[min(520px,55vw)] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(244,114,182,0.55)_0%,rgba(167,139,250,0.45)_45%,rgba(255,255,255,0)_72%)] blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-0 h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle_at_70%_20%,rgba(216,180,254,0.5)_0%,rgba(255,255,255,0)_65%)] blur-[48px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1100px] px-4 pb-12 pt-12 sm:px-6 md:pb-16 md:pt-16 lg:pb-[96px] lg:pt-[88px]">
-        <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-5 py-2 text-[14px] font-medium text-[#A855F7]">
+      <div className="relative z-10 mx-auto w-full max-w-[1180px] px-4 pb-8 pt-8 sm:px-6 md:pb-9 md:pt-9 lg:pb-10 lg:pt-10">
+        <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-5 py-2 text-[14px] font-medium text-[#A855F7] lg:text-[17px]">
           Marketing &amp; GTM Strategy
         </div>
-        <h2 className="mt-5 text-center text-[26px] font-bold leading-[1.15] tracking-[-0.2px] text-[#111827] md:text-[34px] md:tracking-[-0.3px] lg:text-[42px] lg:tracking-[-0.4px]">
+        <h2 className="mt-5 text-center text-[24px] font-semibold leading-[1.15] tracking-[-0.2px] text-[#111827] md:text-[32px] md:tracking-[-0.3px] lg:text-[48px] lg:tracking-[-0.4px]">
           From Strategy to Market Domination
         </h2>
-        <p className="mx-auto mt-4 max-w-[820px] text-center text-[15px] font-normal leading-[1.75] text-[#6b7280] md:mt-5 md:text-[16px] lg:text-[18px]">
+        <p className="mx-auto mt-4 max-w-[1080px] text-center text-[14px] font-normal leading-[1.75] text-[#6b7280] md:mt-5 md:text-[16px] lg:text-[20px] lg:leading-normal">
           We don&apos;t just design brands—we launch them into the market with precision strategies that drive awareness,
           engagement, and revenue growth.
         </p>
 
-        <div className="mt-14">
+        <div className="mt-10 lg:mt-12">
           <StrategyBlock
             theme="blue"
             barTitle="1. Strategic Market Entry"
@@ -104,7 +104,7 @@ export default function MarketingGtmSection() {
                     alt="Market analysis"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Market Analysis & Competitive Intelligence",
@@ -117,7 +117,7 @@ export default function MarketingGtmSection() {
                     alt="Positioning and messaging"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Positioning & Messaging Framework",
@@ -130,7 +130,7 @@ export default function MarketingGtmSection() {
                     alt="Channel strategy"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Channel Strategy & Mix Optimization",
@@ -151,7 +151,7 @@ export default function MarketingGtmSection() {
                     alt="Campaign management"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Multi-Channel Campaign Management",
@@ -164,7 +164,7 @@ export default function MarketingGtmSection() {
                     alt="Content creation"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Content Creation & Distribution",
@@ -177,7 +177,7 @@ export default function MarketingGtmSection() {
                     alt="Launch timeline"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Launch Timeline & Project Management",
@@ -198,7 +198,7 @@ export default function MarketingGtmSection() {
                     alt="Performance marketing"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Performance Marketing & Optimization",
@@ -211,7 +211,7 @@ export default function MarketingGtmSection() {
                     alt="Customer acquisition and retention"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Customer Acquisition & Retention",
@@ -224,7 +224,7 @@ export default function MarketingGtmSection() {
                     alt="Analytics and reporting"
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded-xl"
+                    className="h-16 w-16 rounded-xl"
                   />
                 ),
                 title: "Analytics & Reporting Dashboard",

@@ -1,3 +1,5 @@
+"use client";
+
 import AboutUsSection from "./components/AboutUsSection";
 import CtaBand from "./components/CtaBand";
 import FaqSection from "./components/FaqSection";
@@ -9,23 +11,26 @@ import MarketingGtmSection from "./components/MarketingGtmSection";
 import OurServicesSection from "./components/OurServicesSection";
 import OurWorkSection from "./components/OurWorkSection";
 import ProcessRoadmapSection from "./components/ProcessRoadmapSection";
+import { ScheduleCallProvider } from "./components/ScheduleCallModal";
 import ServicesSection from "./components/ServicesSection";
 
 export default function Home() {
   return (
-    <main className="w-full bg-white text-black">
-      <Header />
-      <HeroSection />
-      <ServicesSection />
-      <IndustriesMarqueeSection />
-      <OurServicesSection />
-      <MarketingGtmSection />
-      <ProcessRoadmapSection />
-      <OurWorkSection />
-      <AboutUsSection />
-      <FaqSection />
-      <CtaBand />
-      <Footer />
-    </main>
+    <ScheduleCallProvider>
+      <main className="w-full bg-white text-black">
+        <Header />
+        <HeroSection />
+        <ServicesSection />
+        <IndustriesMarqueeSection />
+        <OurServicesSection />
+        <MarketingGtmSection />
+        <ProcessRoadmapSection />
+        <OurWorkSection />
+        <AboutUsSection />
+        <FaqSection />
+        <CtaBand />
+        <Footer />
+      </main>
+    </ScheduleCallProvider>
   );
 }

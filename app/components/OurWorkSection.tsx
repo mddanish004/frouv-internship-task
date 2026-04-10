@@ -6,7 +6,7 @@ function Tag({ children, variant }: { children: ReactNode; variant: "blue" | "wa
     variant === "blue"
       ? "bg-[#E0F2FE] text-[#075985]"
       : "bg-[#FFEDD5] text-[#9A3412]";
-  return <span className={`rounded-full px-3 py-1 text-[12px] font-semibold leading-none ${cls}`}>{children}</span>;
+  return <span className={`rounded-full px-3 py-1 text-[12px] font-medium leading-none lg:text-[14px] ${cls}`}>{children}</span>;
 }
 
 function WorkPreview({ src, alt }: { src: string; alt: string }) {
@@ -29,16 +29,16 @@ function PortfolioCard({
   preview: ReactNode;
 }) {
   return (
-    <article className="flex flex-col rounded-2xl border border-[#f0f0f0] bg-white p-6 shadow-[0_2px_16px_rgba(0,0,0,0.04)]">
-      <div className="aspect-16/10 w-full overflow-hidden rounded-[10px] ring-1 ring-black/4">{preview}</div>
-      <div className="mt-5 flex flex-wrap items-start justify-between gap-3">
-        <h3 className="text-[18px] font-bold leading-tight text-[#1a1a1a]">{title}</h3>
+    <article className="flex flex-col rounded-xl border border-[#f0f0f0] bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] lg:h-[490px] lg:w-[548px] lg:rounded-[16px] lg:border-[0.6px] lg:p-6">
+      <div className="aspect-16/10 w-full overflow-hidden rounded-lg ring-1 ring-black/4 lg:h-[320px] lg:aspect-auto">{preview}</div>
+      <div className="mt-4 flex flex-wrap items-start justify-between gap-2">
+        <h3 className="text-[16px] font-medium leading-tight text-[#1a1a1a] lg:text-[24px]">{title}</h3>
         <div className="flex shrink-0 flex-wrap justify-end gap-2">
           <Tag variant={tag1.variant}>{tag1.label}</Tag>
           <Tag variant={tag2.variant}>{tag2.label}</Tag>
         </div>
       </div>
-      <p className="mt-3 text-left text-[14px] font-normal leading-relaxed text-[#666666]">{description}</p>
+      <p className="mt-2 text-left text-[13px] font-normal leading-relaxed text-[#666666] lg:text-[17px] lg:leading-normal">{description}</p>
     </article>
   );
 }
@@ -106,15 +106,15 @@ const PROJECTS = [
 
 export default function OurWorkSection() {
   return (
-    <section className="w-full bg-white px-4 py-12 sm:px-6 md:py-16 lg:py-[88px]">
+    <section className="w-full bg-white px-4 py-8 sm:px-6 md:py-9 lg:py-10">
       <div className="mx-auto w-full max-w-[1180px]">
-        <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-5 py-2 text-[14px] font-medium text-[#A855F7]">
+        <div className="mx-auto flex w-fit items-center justify-center rounded-full border border-[#d8b4fe] bg-[#faf5ff] px-5 py-2 text-[14px] font-medium text-[#A855F7] lg:text-[17px]">
           Our Work
         </div>
-        <h2 className="mt-5 text-center text-[24px] font-bold leading-tight tracking-[-0.2px] text-[#1a1a1a] md:text-[28px] md:tracking-[-0.3px] lg:text-[34px]">
+        <h2 className="mt-5 text-center text-[22px] font-semibold leading-tight tracking-[-0.2px] text-[#1a1a1a] md:text-[30px] md:tracking-[-0.3px] lg:text-[48px]">
           Crafted with Purpose
         </h2>
-        <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 md:mt-10 md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:mt-14 lg:gap-x-10 lg:gap-y-12">
+        <div className="mt-8 grid grid-cols-1 gap-x-5 gap-y-6 md:mt-10 md:grid-cols-2 md:gap-x-7 md:gap-y-8 lg:mt-12 lg:justify-center lg:gap-x-8 lg:gap-y-8">
           {PROJECTS.map((p, index) => (
             <PortfolioCard
               key={index}
