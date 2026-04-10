@@ -158,7 +158,9 @@ export default function FaqSection() {
         </h2>
 
         <div className="mt-8 grid grid-cols-1 gap-5 md:mt-10 md:grid-cols-[320px_1fr] md:gap-6 lg:mt-12 lg:grid-cols-[fit-content(320px)_760px] lg:justify-center lg:gap-8">
-          <SupportCard />
+          <div className="flex justify-center md:block">
+            <SupportCard />
+          </div>
 
           <div className="flex flex-col gap-5 lg:w-[760px] lg:gap-8">
             {items.map((item, i) => (
